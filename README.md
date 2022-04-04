@@ -7,6 +7,7 @@ Data folders are expected to be structured as:
 training -|
           --clouds
           --labels
+
 validation -|
             --clouds
             --labels
@@ -19,7 +20,7 @@ This repository includes
  - [`vis_pc.py`](vis_pc.py) Visualizer for the dataset
  - [`V0_pointpillars_bimprovekitti.yml`](V0_pointpillars_bimprovekitti.yml) - V0 version of the PointPillars model and data configuration
  
-Installation
+##Installation
 - Install the required Open3D and Open3D-ML dependencies
 - copy `bimprovekitti.py` and `__init__.py` to the intended location
 - switch root to the local copy of the Open3D-ML with the BIMProve extendion by issuing
@@ -31,7 +32,7 @@ Installation
 #python3 scripts/collect_bboxes.py --dataset_path <path_to_your_dataset> --dataset_type BimProveKITTI
 ```
 
-Training
+##Training
 - train your model with the BIMProve dataset and the provided configurations (See Open3D-ML for further instructions and alternative approaches)
 ```
 #python3 scripts/run_pipeline.py tf -c ./V0_pointpillars_bimprovekitti.yml --dataset_path <path_to_your_dataset> --pipeline ObjectDetection
