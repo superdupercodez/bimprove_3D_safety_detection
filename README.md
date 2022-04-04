@@ -1,11 +1,12 @@
-# BIMProve 3D visual risk detection system foundation
+# BIMProve foundation for training point cloud safety object detection models
 
-This is a foundation for building 3D object detection capable point cloud analysis model. The model intended to be applied is [PointPillars](https://arxiv.org/abs/1812.05784) available in the [Open3D-ML](https://github.com/isl-org/Open3D-ML) machine learning extension for [Open3D](https://github.com/isl-org/Open3D) itself. Other model architectures and point cloud processing librarier may be compatible too. See Open3D and Open3D-ML specific instructions for setting up the requirements as this is BIMProve project specific addition in order to consume BIMProve point clouds and produce domain specific 3D object detection model.
+This is a foundation for training a 3D safety related object detection capable point cloud analysis model. The model architecture intended to be applied is [PointPillars](https://arxiv.org/abs/1812.05784) available in the [Open3D-ML](https://github.com/isl-org/Open3D-ML) machine learning extension for [Open3D](https://github.com/isl-org/Open3D). Other model architectures and point cloud processing libraries may be compatible too. See Open3D and Open3D-ML specific instructions for setting them up. This is only a BIMProve project specific addition in order to consume BIMProve point clouds and produce domain specific 3D object detection model. BIMProve data not included.
 
 Includes
  - [`bimprovekitti.py`](ml3d/datasets/bimprovekitti.py) BIMProve specific [KITTI](https://github.com/bostondiditeam/kitti/blob/master/resources/devkit_object/readme.txt)-formatted data feeder for [Open3D-ML](https://github.com/isl-org/Open3D-ML)
  - [`__init__.py`](ml3d/datasets/__init__.py) Init file with the added BIMProve dataset
  - [`vis_pc.py`](vis_pc.py) Visualizer for the dataset
+ - [`V0_pointpillars_bimprovekitti.yml`](ml3d/configs/V0_pointpillars_bimprovekitti.yml) - V0 version of the PointPillars model and data configuration
  
 Installation
 - Install the required Open3D and Open3D-ML dependencies
