@@ -6,7 +6,7 @@ Includes
  - [`bimprovekitti.py`](ml3d/datasets/bimprovekitti.py) BIMProve specific [KITTI](https://github.com/bostondiditeam/kitti/blob/master/resources/devkit_object/readme.txt)-formatted data feeder for [Open3D-ML](https://github.com/isl-org/Open3D-ML)
  - [`__init__.py`](ml3d/datasets/__init__.py) Init file with the added BIMProve dataset
  - [`vis_pc.py`](vis_pc.py) Visualizer for the dataset
- - [`V0_pointpillars_bimprovekitti.yml`](ml3d/configs/V0_pointpillars_bimprovekitti.yml) - V0 version of the PointPillars model and data configuration
+ - [`V0_pointpillars_bimprovekitti.yml`](V0_pointpillars_bimprovekitti.yml) - V0 version of the PointPillars model and data configuration
  
 Installation
 - Install the required Open3D and Open3D-ML dependencies
