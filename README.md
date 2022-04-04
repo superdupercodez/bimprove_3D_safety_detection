@@ -15,7 +15,7 @@ validation -|
 Where `clouds` contains the point cloud files and the `labels` contains the associated label files.
 
 This repository includes
- - [`bimprovekitti.py`](ml3d/datasets/bimprovekitti.py) BIMProve specific [KITTI](https://github.com/bostondiditeam/kitti/blob/master/resources/devkit_object/readme.txt)-formatted data feeder for [Open3D-ML](https://github.com/isl-org/Open3D-ML)
+ - [`bimprovekitti.py`](ml3d/datasets/bimprovekitti.py) BIMProve specific [KITTI](https://github.com/bostondiditeam/kitti/blob/master/resources/devkit_object/readme.txt)-labelled point cloud data feeder for [Open3D-ML](https://github.com/isl-org/Open3D-ML)
  - [`__init__.py`](ml3d/datasets/__init__.py) Init file with the added BIMProve dataset
  - [`vis_pc.py`](vis_pc.py) Visualizer for the dataset
  - [`V0_pointpillars_bimprovekitti.yml`](V0_pointpillars_bimprovekitti.yml) - V0 version of the PointPillars model and data configuration
@@ -37,3 +37,5 @@ This repository includes
 ```
 #python3 scripts/run_pipeline.py tf -c ./V0_pointpillars_bimprovekitti.yml --dataset_path <path_to_your_dataset> --pipeline ObjectDetection
 ```
+For questions and comments contact [Tommi Aihkisalo](mailto:tommi.aihkisalovtt.fi)
+
