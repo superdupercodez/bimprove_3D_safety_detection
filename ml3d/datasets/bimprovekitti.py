@@ -4,7 +4,6 @@ import pandas as pd
 import os, glob, pickle
 from pathlib import Path
 from os.path import join, exists, dirname, abspath, isdir
-from sklearn.neighbors import KDTree
 from tqdm import tqdm
 import logging
 
@@ -43,9 +42,6 @@ class BIMProveKITTI(BaseDataset):
             0: 'net',
             1: 'barrier',
             2: 'DontCare',
-            #'net' :0,
-            #'barrier': 1,
-            #'DontCare': 2,
         }
         return label_to_names
         
@@ -62,13 +58,6 @@ class BIMProveKITTI(BaseDataset):
         else:
             raise ValueError("Invalid split {}".format(split))
     
-    #@staticmethod
-    #def read_pc(self, pc_path):
-    #    point_c = o3d.io.read_point_cloud(pc_path)
-    #    points = np.asarray(point_c.points, dtype=np.float32)
-    #    colors = np.asarray(point_c.colors, dtype=np.float32)
-    #    return points, colors
-
     @staticmethod
     def read_labels(path, R=None):
         log.debug(f'* Opening {path}')
@@ -82,12 +71,6 @@ class BIMProveKITTI(BaseDataset):
         objects = []
         for label in labels:
             log.debug(f'Reading label {label}')
-
-            #cart 0 0 0 0 0 0 0 0.34209514 1.28862791 1.95198966 0.00185354 2.19083717 0.09322759 1.18472542
-            #INFO CENTER IS [ 0.09322759 -0.00185354  0.21908372]
-            
-            
-            #Pedestrian 0.00 0 -0.20 712.40 143.00 810.73 307.92 1.89 0.48 1.20 1.84 1.47 8.41 0.01
             '''            
             F#  #Values    Name      Description
             ----------------------------------------------------------------------------
@@ -111,7 +94,7 @@ class BIMProveKITTI(BaseDataset):
             label = label.strip().split(' ')
             name = label[0] if label[0] in BIMProveKITTI.get_label_to_names().values() else 'DontCare'           
             size = [float(label[9]), float(label[8]), float(label[10])]  # w,h,l            
-            #This is funked up - need to substract 2.3 from the Z coordinates in Kitti labeling system!?
+            #This is funked up - need to substract 2.3 from the Z coordinates in Kitti labeling system
             center = np.array([float(label[13]), -1.0 * float(label[11]), (float(label[12]) - 2.3)])                        
             yaw = float(label[14]) - np.pi
             yaw = yaw - np.floor(yaw / (2 * np.pi) + 0.5) * 2 * np.pi                                   
