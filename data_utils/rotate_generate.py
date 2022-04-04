@@ -73,7 +73,7 @@ def save_new(ply, lbl, pcd, labels, prefix='gen_'):
     f.truncate()                 
     f.close()
    
-root_path = "/home/tai/Desktop/bimprove_data/pointcs/bimprove_scanned/sideview_chunked/generated_5by5_chunks/"
+root_path = ""
 plys = glob.glob(os.path.join(root_path, "*", "clouds", "*.ply"))
 lbls = glob.glob(os.path.join(root_path, "*", "labels", "*.txt"))
 
