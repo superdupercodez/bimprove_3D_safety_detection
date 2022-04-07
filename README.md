@@ -1,6 +1,6 @@
 # BIMProve foundation for training point cloud safety object detection models
 
-This is a foundation for training a 3D safety related object detection capable point cloud analysis model. The model architecture intended to be applied is [PointPillars](https://arxiv.org/abs/1812.05784) available in the [Open3D-ML](https://github.com/isl-org/Open3D-ML) machine learning extension for [Open3D](https://github.com/isl-org/Open3D). Other model architectures and point cloud processing libraries may be compatible too. See Open3D and Open3D-ML specific instructions for setting them up. This is only a BIMProve project specific addition in order to consume BIMProve point clouds and produce domain specific 3D object detection model. BIMProve data not included.
+This is a foundation for training a 3D safety related object detection capable point cloud analysis model. The model architecture intended to be applied is [PointPillars](https://arxiv.org/abs/1812.05784) available in the [Open3D-ML](https://github.com/isl-org/Open3D-ML) machine learning extension for [Open3D](https://github.com/isl-org/Open3D). Other model architectures and point cloud processing libraries may be compatible too. See Open3D and Open3D-ML specific instructions for setting them up. This is only a BIMProve project specific addition in order to consume BIMProve point clouds and produce domain specific 3D object detection model. BIMProve data not included here. Open3D-ML supports either PyTorch or TensorFlow. At the time of writing this PyTorch with more stabile AdamW optmizer implementation in this case allows higher precision with less training.
 
 Data folders are expected to be structured as:
 ```
@@ -33,7 +33,12 @@ This repository includes
 ```
 
 ## Training
-- train your model with the BIMProve dataset and the provided configurations (See Open3D-ML for further instructions and alternative approaches)
+- train your model with the BIMProve dataset and the provided configurations (See Open3D-ML for further instructions and alternative approaches) using
+```
+#python3 scripts/run_pipeline.py torch -c ./V0_pointpillars_bimprovekitti.yml --dataset_path <path_to_your_dataset> --pipeline ObjectDetection
+```
+Or using Tensorflow instead of PyTorch
+
 ```
 #python3 scripts/run_pipeline.py tf -c ./V0_pointpillars_bimprovekitti.yml --dataset_path <path_to_your_dataset> --pipeline ObjectDetection
 ```
