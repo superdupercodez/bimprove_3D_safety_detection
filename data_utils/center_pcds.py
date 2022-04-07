@@ -2,11 +2,10 @@ import glob
 import open3d as o3d
 import os
 
-root_path = ""
+data_root_path = "./"
 
-plys = glob.glob(os.path.join(root_path, "validation", "clouds", "*.ply"))
-ply_folders = [glob.glob(os.path.join(root_path, "training", "clouds", "*.ply")),
-               glob.glob(os.path.join(root_path, "validation", "clouds", "*.ply")),
+ply_folders = [glob.glob(os.path.join(data_root_path, "training", "clouds", "*.ply")),
+               glob.glob(os.path.join(data_root_path, "validation", "clouds", "*.ply")),
               ]
 
 for ply_folder in ply_folders:

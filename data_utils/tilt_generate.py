@@ -4,6 +4,8 @@ import os
 import numpy as np
 import math
 
+data_root_path = "./"
+
 def visualize(pcd, labels):
     viz_items = [pcd]
     for label_attr in labels:
@@ -93,9 +95,9 @@ def save_new(ply, lbl, pcd, labels, prefix='gen_'):
     f.truncate()                 
     f.close()
 
-root_path = "/home/tai/Desktop/bimprove_data/pointcs/bimprove_scanned/sideview_chunked/generated_5by5_chunks/"
-plys = glob.glob(os.path.join(root_path, "*", "clouds", "*.ply"))
-lbls = glob.glob(os.path.join(root_path, "*", "labels", "*.txt"))
+
+plys = glob.glob(os.path.join(data_root_path, "*", "clouds", "*.ply"))
+lbls = glob.glob(os.path.join(data_root_path, "*", "labels", "*.txt"))
 
 #circle_divider = 12
 #angle_rads = np.arange(np.pi/circle_divider, 2*np.pi, np.pi/circle_divider)
