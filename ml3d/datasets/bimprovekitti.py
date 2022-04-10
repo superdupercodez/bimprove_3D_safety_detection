@@ -160,7 +160,7 @@ class BIMProveKITTI(BaseDataset):
         pass
 
     def save_test_result(self, results, attr):
-        test_result_folder = "./logs/test_shit/"
+        test_result_folder = "./logs/test_results/"
         make_dir(test_result_folder)
         for attr, res in zip(attrs, results):
             name = attr['name']
